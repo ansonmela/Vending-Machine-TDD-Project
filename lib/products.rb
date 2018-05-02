@@ -1,5 +1,5 @@
 class Products
-	attr_accessor :products
+	attr_accessor :products, :dispenser
 
 
 	def initialize
@@ -13,5 +13,7 @@ class Products
 
 		@products['Chips'].push(0.50)
 		@products['Chips'].push(2)
+
+		@dispenser = []
 	end
 end

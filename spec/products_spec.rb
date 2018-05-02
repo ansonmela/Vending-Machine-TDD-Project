@@ -28,5 +28,13 @@ describe Products do
 		it "should have 2 chips in the vending machine upon instantiating" do 
 			expect(products.products["Chips"][1]).to eq(2)
 		end
+
+		it "should have an empty dispenser upon instantiating" do 
+			expect(products.dispenser.length).to eq(0)
+		end
+
+		it "should not have gum in the vending machine" do 
+			expect(products.products["Gum"]).to eq([])
+		end
 	end
 end
