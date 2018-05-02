@@ -42,6 +42,12 @@ describe Front_Display do
 		end
 	end
 
+	describe "#sold_out_message" do 
+		it "should display 'SOLD OUT'" do 
+			expect(front_display.sold_out_message).to eq("SOLD OUT")
+		end
+	end
+
 
 
 end

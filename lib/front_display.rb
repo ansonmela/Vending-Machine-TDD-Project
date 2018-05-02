@@ -20,4 +20,8 @@ class Front_Display
 	def display_current_total(total)
 		@message = total
 	end
+
+	def sold_out_message
+		@message = "SOLD OUT"
+	end
 end
