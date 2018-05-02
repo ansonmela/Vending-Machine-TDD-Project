@@ -7,5 +7,8 @@ class Products
 
 		@products['Cola'].push(1.00)
 		@products['Cola'].push(2)
+
+		@products['Candy'].push(0.65)
+		@products['Candy'].push(2)
 	end
 end
