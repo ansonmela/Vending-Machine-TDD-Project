@@ -4,4 +4,8 @@ class Front_Display
 	def initialize
 		@message = "INSERT COIN"
 	end
+
+	def show_price(price)
+		@message = "PRICE: %.2f" % [price]
+	end
 end
