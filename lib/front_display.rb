@@ -16,4 +16,8 @@ class Front_Display
 	def set_to_default_message
 		@message = "INSERT COIN"
 	end
+
+	def display_current_total(total)
+		@message = total
+	end
 end

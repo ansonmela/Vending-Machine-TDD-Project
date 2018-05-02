@@ -33,6 +33,15 @@ describe Front_Display do
 		it "should set display to default message" do 
 			expect(front_display.set_to_default_message).to eq("INSERT COIN")
 		end
-	end 
+	end
+
+	describe "#display_current_total" do
+		it "should display current total" do
+			dollar_total = front_display.display_current_total(1.00)
+			expect(dollar_total).to eq(1.00)
+		end
+	end
+
+
 
 end
