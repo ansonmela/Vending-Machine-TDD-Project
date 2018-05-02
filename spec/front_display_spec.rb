@@ -24,4 +24,10 @@ describe Front_Display do
 			expect(front_display.show_price(0.50)).to eq("PRICE: 0.50")
 		end
 	end
+
+	describe "#thank_you_display" do 
+		it "should display 'THANK YOU'" do 
+			expect(front_display.thank_you_display).to eq("THANK YOU")
+		end
+	end
 end

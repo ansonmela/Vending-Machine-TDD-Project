@@ -8,4 +8,8 @@ class Front_Display
 	def show_price(price)
 		@message = "PRICE: %.2f" % [price]
 	end
+
+	def thank_you_display
+		@message = "THANK YOU"
+	end
 end
