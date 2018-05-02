@@ -12,4 +12,8 @@ class Front_Display
 	def thank_you_display
 		@message = "THANK YOU"
 	end
+
+	def set_to_default_message
+		@message = "INSERT COIN"
+	end
 end
