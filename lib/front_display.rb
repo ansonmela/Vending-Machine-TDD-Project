@@ -24,4 +24,8 @@ class Front_Display
 	def sold_out_message
 		@message = "SOLD OUT"
 	end
+
+	def exact_change_only_message
+		@message = "EXACT CHANGE ONLY"
+	end
 end

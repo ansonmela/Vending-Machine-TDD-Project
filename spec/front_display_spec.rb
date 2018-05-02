@@ -48,6 +48,9 @@ describe Front_Display do
 		end
 	end
 
-
-
+	describe "#exact_change_only_message" do 
+		it "should display 'EXACT CHANGE ONLY" do 
+			expect(front_display.exact_change_only_message).to eq("EXACT CHANGE ONLY")
+		end
+	end
 end
