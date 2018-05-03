@@ -12,5 +12,9 @@ describe CoinMech do
 		it "should have an empty return queue upon instantiating" do 
 			expect(coin_mech.return_queue).to eq([])
 		end
+
+		it "should have an empty coin box upon instantiating" do 
+			expect(coin_mech.coin_box).to eq([])
+		end
 	end
 end
