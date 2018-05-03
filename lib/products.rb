@@ -16,4 +16,9 @@ class Products
 
 		@dispenser = []
 	end
+
+
+	def dispense_product(item, inserted_coins)
+			@dispenser.push(item)
+	end
 end

@@ -37,4 +37,11 @@ describe Products do
 			expect(products.products["Gum"]).to eq([])
 		end
 	end
+
+	describe "#dispense_product" do 
+		it "should dispense a cola to the dispenser" do 
+			products.dispense_product("Cola", 1.00)
+			expect(products.dispenser).to eq(["Cola"])
+		end
+	end
 end
