@@ -53,5 +53,9 @@ describe Products do
 			products.dispense_product("Candy", 0.65)
 			expect(products.dispenser).to eq(["Candy"])
 		end
+
+		it "should not dispense cola to the dispenser if enough coins have not been inserted" do
+			expect(products.dispense_product("Cola", 0.50)).to eq("INSUFFICIENT FUNDS")
+		end
 	end
 end

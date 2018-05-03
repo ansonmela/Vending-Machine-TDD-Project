@@ -19,6 +19,12 @@ class Products
 
 
 	def dispense_product(item, inserted_coins)
+		if !@products[item]
+			return "NOT FOUND"
+		elsif inserted_coins < @products[item][0]
+			return "INSUFFICIENT FUNDS"
+		else
 			@dispenser.push(item)
+		end
 	end
 end
