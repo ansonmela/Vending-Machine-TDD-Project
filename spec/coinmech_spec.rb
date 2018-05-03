@@ -8,5 +8,9 @@ describe CoinMech do
 		it "should have a total counter set to 0 upon instantiating" do 
 			expect(coin_mech.total).to eq(0)
 		end
+
+		it "should have an empty return queue upon instantiating" do 
+			expect(coin_mech.return_queue).to eq([])
+		end
 	end
 end
