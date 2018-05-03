@@ -43,5 +43,15 @@ describe Products do
 			products.dispense_product("Cola", 1.00)
 			expect(products.dispenser).to eq(["Cola"])
 		end
+
+		it "should dispense chips to the dispenser" do 
+			products.dispense_product("Chips", 0.50)
+			expect(products.dispenser).to eq(["Chips"])
+		end
+
+		it "should dispense candy to the dispenser" do 
+			products.dispense_product("Candy", 0.65)
+			expect(products.dispenser).to eq(["Candy"])
+		end
 	end
 end
