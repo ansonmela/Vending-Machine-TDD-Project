@@ -40,5 +40,10 @@ describe CoinMech do
 		it "should detect weight and size of a coin, like a dime, and determine validity and type" do 
 			expect(coin_mech.is_coin_valid?(2.268, 0.705)).to eq("Valid Dime")
 		end
+
+		it "should push the valid coin type to the coin box upon successful validation" do 
+			coin_mech.is_coin_valid?(5.670, 0.955)
+			expect(coin_mech.coin_box.join).to eq("Quarter")
+		end
 	end
 end
