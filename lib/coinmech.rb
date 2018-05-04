@@ -12,6 +12,8 @@ class CoinMech
 			return "Valid Quarter"
 		elsif weight == 5.000 && size == 0.835
 			return "Valid Nickel"
+		elsif weight == 2.268 && size == 0.705
+			return "Valid Dime"
 		end
 
 	end
