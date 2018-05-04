@@ -10,6 +10,9 @@ class CoinMech
 	def is_coin_valid?(weight, size)
 		if weight == 5.670 && size == 0.955
 			return "Valid Quarter"
+		elsif weight == 5.000 && size == 0.835
+			return "Valid Nickel"
 		end
+
 	end
 end

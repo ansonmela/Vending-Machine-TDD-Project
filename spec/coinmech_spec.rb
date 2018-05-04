@@ -29,8 +29,12 @@ describe CoinMech do
 	end
 
 	describe "#is_coin_valid?" do 
-		it "should detect weight and size of coin, like a quarter, and determine validity and type" do
+		it "should detect weight and size of a coin, like a quarter, and determine validity and type" do
 			expect(coin_mech.is_coin_valid?(5.670, 0.955)).to eq("Valid Quarter")
+		end
+
+		it "should detect weight and size of a coin, like a nickel, and determine validity and type" do 
+			expect(coin_mech.is_coin_valid?(5.000, 0.835)).to eq("Valid Nickel")
 		end
 	end
 end
