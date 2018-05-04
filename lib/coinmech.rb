@@ -7,8 +7,9 @@ class CoinMech
 		@coin_box = []
 	end
 
-
-
-
-
+	def is_coin_valid?(weight, size)
+		if weight == 5.670 && size == 0.955
+			return "Valid Quarter"
+		end
+	end
 end

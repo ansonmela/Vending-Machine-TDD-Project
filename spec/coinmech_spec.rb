@@ -2,7 +2,17 @@ require 'coinmech'
 
 describe CoinMech do
 
+	class self::Coins
+
+		def initialize
+			@quarter = 0.25
+			@nickel = 0.05
+			@dime = 0.10
+		end
+	end
+
 	let(:coin_mech) {CoinMech.new}
+	let(:coins) {self.class::Coins.new}
 
 	describe "#initialize" do 
 		it "should have a total counter set to 0 upon instantiating" do 
@@ -15,6 +25,12 @@ describe CoinMech do
 
 		it "should have an empty coin box upon instantiating" do 
 			expect(coin_mech.coin_box).to eq([])
+		end
+	end
+
+	describe "#is_coin_valid?" do 
+		it "should detect weight and size of coin, like a quarter, and determine validity and type" do
+			expect(coin_mech.is_coin_valid?(5.670, 0.955)).to eq("Valid Quarter")
 		end
 	end
 end
