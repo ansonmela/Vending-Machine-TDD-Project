@@ -19,4 +19,10 @@ class CoinMech
 			return "Valid Dime"
 		end
 	end
+
+	def update_total
+		if @coin_box.include?("Quarter")
+			@total += 0.25
+		end
+	end
 end

@@ -1,18 +1,19 @@
 require 'coinmech'
 
+class Coins
+	attr_accessor :quarter, :nickel, :dime
+	def initialize
+		# [weight, size, value]
+		@quarter = [5.670, 0.955, 0.25]
+		@nickel = [5.000, 0.835, 0.05]
+		@dime = [2.268, 0.705, 0.10]
+	end
+end
+
 describe CoinMech do
 
-	class self::Coins
-
-		def initialize
-			@quarter = 0.25
-			@nickel = 0.05
-			@dime = 0.10
-		end
-	end
-
 	let(:coin_mech) {CoinMech.new}
-	let(:coins) {self.class::Coins.new}
+	let(:coins) {Coins.new}
 
 	describe "#initialize" do 
 		it "should have a total counter set to 0 upon instantiating" do 
@@ -30,20 +31,27 @@ describe CoinMech do
 
 	describe "#is_coin_valid?" do 
 		it "should detect weight and size of a coin, like a quarter, and determine validity and type" do
-			expect(coin_mech.is_coin_valid?(5.670, 0.955)).to eq("Valid Quarter")
+			expect(coin_mech.is_coin_valid?(coins.quarter[0], coins.quarter[1])).to eq("Valid Quarter")
 		end
 
 		it "should detect weight and size of a coin, like a nickel, and determine validity and type" do 
-			expect(coin_mech.is_coin_valid?(5.000, 0.835)).to eq("Valid Nickel")
+			expect(coin_mech.is_coin_valid?(coins.nickel[0], coins.nickel[1])).to eq("Valid Nickel")
 		end
 
 		it "should detect weight and size of a coin, like a dime, and determine validity and type" do 
-			expect(coin_mech.is_coin_valid?(2.268, 0.705)).to eq("Valid Dime")
+			expect(coin_mech.is_coin_valid?(coins.dime[0], coins.dime[1])).to eq("Valid Dime")
 		end
 
 		it "should push the valid coin type to the coin box upon successful validation" do 
-			coin_mech.is_coin_valid?(5.670, 0.955)
+			coin_mech.is_coin_valid?(coins.quarter[0], coins.quarter[1])
 			expect(coin_mech.coin_box.join).to eq("Quarter")
 		end
 	end
+
+	describe "#update_total" do 
+		it "should update the total for every valid coin inserted" do 
+			coin_mech.is_coin_valid?(coins.quarter[0], coins.quarter[1])
+			expect(coin_mech.update_total).to eq(0.25)
+		end
+	end 
 end
