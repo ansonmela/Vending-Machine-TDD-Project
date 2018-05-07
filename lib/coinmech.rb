@@ -35,4 +35,10 @@ class CoinMech
 			end
 		end
 	end
+
+	def return_total
+		@total
+	end
+
+	
 end

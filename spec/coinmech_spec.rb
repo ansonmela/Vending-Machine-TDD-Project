@@ -77,5 +77,12 @@ describe CoinMech do
 			coin_mech.update_total
 			expect(coin_mech.total).to eq(0.60)
 		end
-	end 
+	end
+
+	describe "#return_total" do 
+		it "should return the current total" do 
+			expect(coin_mech.return_total).to eq(coin_mech.total)
+		end
+	end
+
 end
