@@ -49,9 +49,16 @@ describe CoinMech do
 	end
 
 	describe "#update_total" do 
-		it "should update the total for every valid coin inserted" do 
+		it "should update the total for every valid coin inserted, like a quarter" do 
 			coin_mech.is_coin_valid?(coins.quarter[0], coins.quarter[1])
-			expect(coin_mech.update_total).to eq(0.25)
+			coin_mech.update_total
+			expect(coin_mech.total).to eq(0.25)
+		end
+
+		it "should update the total for every valid coin inserted, like a dime" do
+			coin_mech.is_coin_valid?(coins.dime[0], coins.dime[1])
+			coin_mech.update_total
+			expect(coin_mech.total).to eq(0.10)
 		end
 	end 
 end

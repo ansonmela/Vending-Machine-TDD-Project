@@ -23,6 +23,8 @@ class CoinMech
 	def update_total
 		if @coin_box.include?("Quarter")
 			@total += 0.25
+		elsif @coin_box.include?("Dime")
+			@total += 0.10
 		end
 	end
 end
