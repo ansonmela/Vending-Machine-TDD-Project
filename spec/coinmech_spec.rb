@@ -85,4 +85,13 @@ describe CoinMech do
 		end
 	end
 
+	describe "#return_coins" do 
+		it "should return all valid coins inserted" do 
+			coin_mech.coin_box.push("Quarter", "Quarter", "Dime", "Nickel")
+			coin_mech.return_coins
+			expect(coin_mech.coin_box).to eq([])
+		end
+
+	end
+
 end
