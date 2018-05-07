@@ -46,6 +46,11 @@ describe CoinMech do
 			coin_mech.is_coin_valid?(coins.quarter[0], coins.quarter[1])
 			expect(coin_mech.coin_box.join).to eq("Quarter")
 		end
+
+		it "should push an invalid coin to the return queue" do 
+			coin_mech.is_coin_valid?(2.500, 0.750)
+			expect(coin_mech.return_queue.join).to eq("Invalid Coin")
+		end
 	end
 
 	describe "#update_total" do 

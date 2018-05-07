@@ -17,6 +17,9 @@ class CoinMech
 		elsif weight == 2.268 && size == 0.705
 			@coin_box.push("Dime")
 			return "Valid Dime"
+		else
+			@return_queue.push("Invalid Coin")
+			return "Invalid Coin"
 		end
 	end
 
