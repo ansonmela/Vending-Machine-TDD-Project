@@ -24,12 +24,15 @@ class CoinMech
 	end
 
 	def update_total
-		if @coin_box.include?("Quarter")
-			@total += 0.25
-		elsif @coin_box.include?("Dime")
-			@total += 0.10
-		elsif @coin_box.include?("Nickel")
-			@total += 0.05
+		@coin_box.each do |coin|
+
+			if coin == "Quarter"
+				@total += 0.25
+			elsif coin == "Dime"
+				@total += 0.10
+			elsif coin == "Nickel"
+				@total += 0.05
+			end
 		end
 	end
 end

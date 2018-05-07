@@ -71,5 +71,11 @@ describe CoinMech do
 			coin_mech.update_total
 			expect(coin_mech.total).to eq(0.05)
 		end
+
+		it "should update the total for every coin inserted" do 
+			coin_mech.coin_box.push("Quarter", "Quarter", "Dime")
+			coin_mech.update_total
+			expect(coin_mech.total).to eq(0.60)
+		end
 	end 
 end
