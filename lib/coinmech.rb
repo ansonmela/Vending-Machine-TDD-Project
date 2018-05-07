@@ -25,6 +25,8 @@ class CoinMech
 			@total += 0.25
 		elsif @coin_box.include?("Dime")
 			@total += 0.10
+		elsif @coin_box.include?("Nickel")
+			@total += 0.05
 		end
 	end
 end

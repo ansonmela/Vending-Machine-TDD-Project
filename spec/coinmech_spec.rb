@@ -60,5 +60,11 @@ describe CoinMech do
 			coin_mech.update_total
 			expect(coin_mech.total).to eq(0.10)
 		end
+
+		it "should update the total for every valid coin inserted, like a nickel" do 
+			coin_mech.is_coin_valid?(coins.nickel[0], coins.nickel[1])
+			coin_mech.update_total
+			expect(coin_mech.total).to eq(0.05)
+		end
 	end 
 end
