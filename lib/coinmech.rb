@@ -42,5 +42,6 @@ class CoinMech
 
 	def return_coins
 		@coin_box.pop(@coin_box.size)
+		@total -= @total
 	end
 end

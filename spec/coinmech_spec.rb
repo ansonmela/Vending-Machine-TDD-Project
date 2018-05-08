@@ -92,6 +92,11 @@ describe CoinMech do
 			expect(coin_mech.coin_box).to eq([])
 		end
 
+		it "should reset total to 0 after returning coins" do 
+			coin_mech.coin_box.push("Quarter", "Quarter")
+			coin_mech.update_total
+			coin_mech.return_coins
+			expect(coin_mech.total).to eq(0)
+		end
 	end
-
 end
