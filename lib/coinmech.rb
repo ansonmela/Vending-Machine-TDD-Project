@@ -44,4 +44,8 @@ class CoinMech
 		@coin_box.pop(@coin_box.size)
 		@total -= @total
 	end
+
+	def invalid_coin_return
+		@return_queue.pop(@return_queue.size).join(" ")
+	end
 end

@@ -99,4 +99,11 @@ describe CoinMech do
 			expect(coin_mech.total).to eq(0)
 		end
 	end
+
+	describe "#invalid_coin_return" do 
+		it "should contain all the rejected coins in a queue to be ready to pop back out to customer" do 
+			coin_mech.is_coin_valid?(2.500, 0.750)
+			expect(coin_mech.invalid_coin_return).to eq("Invalid Coin")
+		end
+	end
 end
