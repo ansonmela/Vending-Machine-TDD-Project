@@ -48,4 +48,9 @@ class CoinMech
 	def invalid_coin_return
 		@return_queue.pop(@return_queue.size).join(" ")
 	end
+
+	def make_change(total_amount_input, price_of_product)
+		change = total_amount_input - price_of_product
+		return "%.2f" % change
+	end
 end

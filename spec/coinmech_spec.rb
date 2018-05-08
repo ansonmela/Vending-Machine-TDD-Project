@@ -106,4 +106,10 @@ describe CoinMech do
 			expect(coin_mech.invalid_coin_return).to eq("Invalid Coin")
 		end
 	end
+
+	describe "#make_change" do 
+		it "should calculate change due if chips is bought with $1.00" do 
+			expect(coin_mech.make_change(1.00, 0.50)).to eq("0.50")
+		end
+	end
 end
