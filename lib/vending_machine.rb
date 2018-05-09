@@ -32,6 +32,11 @@ class Vending_Machine
 
 	def select_product(item)
 		@items = @products.products[item]
+		@item_price = @products.products[item][0]
+
+		if @coin_mech.total == 0
+			@front_display.show_price(@item_price)
+		end
 	end
 
 end

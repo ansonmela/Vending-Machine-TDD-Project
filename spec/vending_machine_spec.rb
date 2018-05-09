@@ -66,6 +66,11 @@ describe Vending_Machine do
 			vending_machine.select_product("Candy")
 			expect(vending_machine.items.empty?).to eq(false)
 		end
+
+		it "should show the customer the product price if no coins have been inserted" do 
+			expect(vending_machine.display_message).to eq("INSERT COIN")
+			expect(vending_machine.select_product("Cola")).to eq("PRICE: 1.00")
+		end
 	end
 end
 
