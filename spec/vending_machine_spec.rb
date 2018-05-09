@@ -40,6 +40,15 @@ describe Vending_Machine do
 		it "should display INSERT COIN when no coins are inserted" do
 			expect(vending_machine.display_message).to eq("INSERT COIN")
 		end
+
+		it "should update display when a valid coin is inserted" do
+			expect(vending_machine.display_message).to eq("INSERT COIN")
+
+			vending_machine.coin_mech.coin_box.push("Quarter", "Quarter")
+			vending_machine.update_total_after_validation
+
+			expect(vending_machine.display_message).to eq(0.50)
+		end
 	end
 end
 

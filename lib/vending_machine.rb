@@ -25,6 +25,8 @@ class Vending_Machine
 	def display_message
 		if coin_mech.total == 0
 			@front_display.message = @front_display.set_to_default_message
+		else
+			@front_display.display_current_total(coin_mech.total)
 		end
 	end
 
