@@ -3,7 +3,7 @@ require 'products'
 require 'front_display'
 
 class Vending_Machine
-	attr_accessor :coin_mech
+	attr_accessor :coin_mech, :items
 
 
 	def initialize
@@ -28,6 +28,10 @@ class Vending_Machine
 		else
 			@front_display.display_current_total(coin_mech.total)
 		end
+	end
+
+	def select_product(item)
+		@items = @products.products[item]
 	end
 
 end

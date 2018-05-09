@@ -50,6 +50,13 @@ describe Vending_Machine do
 			expect(vending_machine.display_message).to eq(0.50)
 		end
 	end
+
+	describe "#select_product" do 
+		it "should have products like cola" do 
+			vending_machine.select_product("Cola")
+			expect(vending_machine.items.empty?).to eq(false)
+		end
+	end
 end
 
 			
