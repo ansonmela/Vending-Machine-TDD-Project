@@ -16,11 +16,18 @@ class Vending_Machine
 		@coin_mech.is_coin_valid?(coin_weight, coin_size) # validate coin
 	end
 
-	def update_coin_after_validation
+	def update_total_after_validation
 		if coin_mech.coin_box.length > 1
 			@coin_mech.update_total
 		end
 	end
+
+	def display_message
+		if coin_mech.total == 0
+			@front_display.message = @front_display.set_to_default_message
+		end
+	end
+
 end
 
 

@@ -24,14 +24,21 @@ describe Vending_Machine do
 	end
 
 
-	describe "#update_coin_after_validation" do 
+	describe "#update_total_after_validation" do 
 		it "should update the total upon validation of inserted coin" do
 			vending_machine.insert_coin_and_validate(coins.quarter[0], coins.quarter[1])
 			vending_machine.insert_coin_and_validate(coins.quarter[0], coins.quarter[1])
 
-			vending_machine.update_coin_after_validation
+			vending_machine.update_total_after_validation
 
 			expect(vending_machine.coin_mech.total).to eq(0.50)
+		end
+	end
+
+
+	describe "#display_message" do 
+		it "should display INSERT COIN when no coins are inserted" do
+			expect(vending_machine.display_message).to eq("INSERT COIN")
 		end
 	end
 end
