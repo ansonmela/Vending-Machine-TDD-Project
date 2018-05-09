@@ -9,6 +9,12 @@ describe Vending_Machine do
 		it "should validate a coin" do
 			expect(vending_machine.insert_coins(coins.quarter[0], coins.quarter[1])).to eq("Valid Quarter")
 		end
+
+		it "should push the coin to the coin_box upon validation" do 
+			vending_machine.insert_coins(coins.quarter[0], coins.quarter[1])
+			vending_machine.insert_coins(coins.dime[0], coins.dime[1])
+			expect(vending_machine.coin_mech.coin_box).to eq(["Quarter", "Dime"])
+		end
 	end
 end
 
