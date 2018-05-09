@@ -10,6 +10,11 @@ describe Vending_Machine do
 			expect(vending_machine.insert_coin_and_validate(coins.quarter[0], coins.quarter[1])).to eq("Valid Quarter")
 		end
 
+		it "should reject invalid coins and push to return queue" do 
+			vending_machine.insert_coin_and_validate(2.500, 0.750)
+			expect(vending_machine.coin_mech.return_queue.join).to eq("Invalid Coin")
+		end
+
 		it "should push the coin to the coin_box upon validation" do 
 			vending_machine.insert_coin_and_validate(coins.quarter[0], coins.quarter[1])
 			vending_machine.insert_coin_and_validate(coins.dime[0], coins.dime[1])
