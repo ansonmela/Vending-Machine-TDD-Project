@@ -100,6 +100,18 @@ describe Vending_Machine do
 		vending_machine.select_product("Chips")
 		expect(vending_machine.check_dispenser).to eq("Chips")
 	end
+
+	it "should dispense the product like cola if enough money has been inserted and return change if applicable" do 
+		vending_machine.coin_mech.coin_box.push("Quarter", "Quarter", "Dime", "Nickel", "Nickel", "Dime", "Dime", "Dime", "Dime")
+
+		vending_machine.update_total_after_validation
+
+		expect(vending_machine.display_message).to eq(1.10)
+		vending_machine.select_product("Cola")
+		expect(vending_machine.check_dispenser).to eq("Cola")
+
+		expect(vending_machine.coin_mech.make_change(1.10, 1.00)).to eq("0.10")
+	end
 end
 
 			
