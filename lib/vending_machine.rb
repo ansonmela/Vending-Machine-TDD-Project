@@ -3,7 +3,7 @@ require 'products'
 require 'front_display'
 
 class Vending_Machine
-	attr_accessor :coin_mech, :items
+	attr_accessor :coin_mech, :items, :products
 
 
 	def initialize
@@ -39,6 +39,9 @@ class Vending_Machine
 		end
 	end
 
+	def check_dispenser
+		@products.dispenser.pop
+	end
 end
 
 

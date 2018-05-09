@@ -80,6 +80,13 @@ describe Vending_Machine do
 			expect(vending_machine.select_product("Cola")).to eq("PRICE: 1.00")
 		end
 	end
+
+	describe "#check_dispenser" do 
+		it "should pop the product out to the customer" do 
+			vending_machine.products.dispenser.push("Chips")
+			expect(vending_machine.check_dispenser).to eq("Chips")
+		end
+	end
 end
 
 			
