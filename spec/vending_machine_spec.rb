@@ -87,6 +87,19 @@ describe Vending_Machine do
 			expect(vending_machine.check_dispenser).to eq("Chips")
 		end
 	end
+
+
+	it "should dispense the product like chips if enough money has been inserted" do 
+		vending_machine.insert_coin_and_validate(coins.quarter[0], coins.quarter[1])
+		vending_machine.insert_coin_and_validate(coins.quarter[0], coins.quarter[1])
+
+		vending_machine.update_total_after_validation
+
+		expect(vending_machine.display_message).to eq(0.50)
+
+		vending_machine.select_product("Chips")
+		expect(vending_machine.check_dispenser).to eq("Chips")
+	end
 end
 
 			

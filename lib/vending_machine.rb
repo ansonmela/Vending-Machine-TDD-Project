@@ -36,6 +36,11 @@ class Vending_Machine
 
 		if @item_price > @coin_mech.total 
 			@front_display.show_price(@item_price)
+			
+		elsif @item_price <= @coin_mech.total
+			@products.dispense_product(item, @coin_mech.total)
+			@coin_mech.make_change(@coin_mech.total, @item_price)
+			@front_display.message = @front_display.thank_you_display
 		end
 	end
 
