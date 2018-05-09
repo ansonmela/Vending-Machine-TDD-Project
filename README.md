@@ -55,6 +55,6 @@ if the value `==` 0, then it must return "SOLD OUT" to the display. This needs t
 contain any coins, then it needs to output a message to the display "EXACT CHANGE ONLY", instead of "INSERT COIN". This needs to be hooked
 up to `vending_machine.rb`.
 
-<h5>Thanks so much for giving me a second chance on this kata! I have done my best to understand the feedback and directly applied it to my process. Looking forward to hearing from you!
+<h5>Thanks so much for giving me a second chance on this kata! I have done my best to understand the feedback and apply it directly on this re-do. Looking forward to hearing from you!
 
 
