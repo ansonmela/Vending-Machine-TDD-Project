@@ -56,6 +56,16 @@ describe Vending_Machine do
 			vending_machine.select_product("Cola")
 			expect(vending_machine.items.empty?).to eq(false)
 		end
+
+		it "should have products like chips" do 
+			vending_machine.select_product("Chips")
+			expect(vending_machine.items.empty?).to eq(false)
+		end
+
+		it "should have products like candy" do 
+			vending_machine.select_product("Candy")
+			expect(vending_machine.items.empty?).to eq(false)
+		end
 	end
 end
 
