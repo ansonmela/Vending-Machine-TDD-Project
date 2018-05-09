@@ -34,7 +34,7 @@ class Vending_Machine
 		@items = @products.products[item]
 		@item_price = @products.products[item][0]
 
-		if @coin_mech.total == 0
+		if @item_price > @coin_mech.total 
 			@front_display.show_price(@item_price)
 		end
 	end

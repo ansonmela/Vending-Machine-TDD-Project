@@ -71,6 +71,14 @@ describe Vending_Machine do
 			expect(vending_machine.display_message).to eq("INSERT COIN")
 			expect(vending_machine.select_product("Cola")).to eq("PRICE: 1.00")
 		end
+
+		it "should not dispense the product if there are insufficient funds inputted into the vending machine" do 
+			vending_machine.coin_mech.coin_box.push("Quarter", "Quarter")
+			vending_machine.update_total_after_validation
+
+			expect(vending_machine.display_message).to eq(0.50)
+			expect(vending_machine.select_product("Cola")).to eq("PRICE: 1.00")
+		end
 	end
 end
 
